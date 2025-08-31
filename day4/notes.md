@@ -12,15 +12,16 @@
 - int[][] matriz = new int[3][3]; **aqui criei uma matriz 3x3**
 - **DICA:** para selecionar o codigo, segura shift e move a seta pra onde quiser, vai selecionar tudo.
 - usando foreach num bidimensional, voce faz:
-'''
+```java
 for(int[] arrBase : array){
   for(int elemento : arrBase){
     código
   }
 }
-'''
+```
 - um array bidimensional, cada "vetor menor" pode ter tamanhos diferentes de arrays, por exemplo: int[][] numeros = new int[3][]; aqui, ele tem 3 arrays menores, e cada um pode ser inicializado com tamanhos diferentes
 - exemplo:  numeros[0] = new int[4]; numeros[1] = new int[1]; e assim vai.
+
 
 
 
