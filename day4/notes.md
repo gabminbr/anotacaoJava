@@ -1,11 +1,11 @@
 # Arrays
 - sintaxe para criar é: tipo[] nomeArray = new tipo[tamanho];
-- **exemplo**: int[] numeros = new int[3];
-- **outra forma**: int[] numeros = {0, 1, 2, 3};
+- **exemplo**: ```java int[] numeros = new int[3];```
+- **outra forma**: ```java int[] numeros = {0, 1, 2, 3};```
 - para iterar sobre um array, como são objetos e não tipos primitivos, podemos acessar seu tamanho usando o atributo length, exemplo: numeros.length;
 - **foreach** é uma forma mais prática de iterar sobre um array, nele vc declara uma variável **do tipo do array**, que vai percorrer cada elemento do array.
-- **exemplo**: for(int numero : numeros){ codigo }
-- sintaxe é: for(tipoArray variavelTemp : nomeArray){ código }
+- **exemplo**: ```java for(int numero : numeros){ codigo }```
+- sintaxe é: ```java for(tipoArray variavelTemp : nomeArray){ código }```
 
 # Arrays Multidimensionais
 - para criar um array de 2 dimensões por exemplo:
@@ -21,6 +21,7 @@ for(int[] arrBase : array){
 ```
 - um array bidimensional, cada "vetor menor" pode ter tamanhos diferentes de arrays, por exemplo: int[][] numeros = new int[3][]; aqui, ele tem 3 arrays menores, e cada um pode ser inicializado com tamanhos diferentes
 - exemplo:  numeros[0] = new int[4]; numeros[1] = new int[1]; e assim vai.
+
 
 
 
