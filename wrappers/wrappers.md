@@ -12,3 +12,9 @@
   // Unboxing: o compilador converte o Integer para um int
   int numeroPrimitivo = numeroWrapper;
 ```
+## Por debaixo dos panos...
+```java
+  Integer numeroWrapper = 42; // Autoboxing em ação!
+```
+- ao criarmos esse wrapper, o que acontece é que: O Java aloca na Heap memory (uma área de memória maior e mais flexível) um espaço para o objeto Integer. Esse objeto contém não apenas o valor 42, mas também informações de "cabeçalho" (metadados que todo objeto Java possui, como a qual classe ele pertence, etc).
+- A variável numeroWrapper, que fica na stack memory, não armazena o objeto inteiro. Em vez disso, ela armazena o endereço de memória de onde o objeto Integer foi alocado na Heap.
