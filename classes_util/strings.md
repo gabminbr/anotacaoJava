@@ -29,6 +29,34 @@
     +--------------------------------+
 ```
 ## Concatenação
+- As strings são imutáveis, entretanto, o que acontece ao fazer o seguinte:
+```java
+  String saudacao = "Olá";
+  saudacao = saudacao + ", Mundo!"; // Como isso é possível se a String é imutável?
+```
+- ao fazer saudacao + ", Mundo!", a JVM cria um objeto completamente novo, porém, esse conteúdo novo vai pra *heap*, não para a pool.
+- Entretanto, o objeto original "Olá", não é "destruído", ele fica na pool e pode ser usado mesmo sem alguém apontando para ele.
+- Então, como concatenar de um jeito mais fácil?
+- StringBuilder e StringBuffer: É como um rascunho em um editor de texto. Você pode adicionar, apagar e alterar o texto no mesmo lugar, sem precisar criar um novo arquivo a cada mudança.
+- a diferença entre os dois é a segurança em ambientes com múltiplos processos (Thread Safety).
+- Imagine um programa com vários "trabalhadores" (chamados threads) tentando executar tarefas ao mesmo tempo.
+- **StringBuffer**: é thread safe, é como uma sala de edição com apenas uma cadeira e uma tranca na porta. Apenas um "trabalhador" (thread) pode entrar e modificar o texto por vez. Os outros precisam esperar na fila.
+- **StringBuilder**: É uma sala de edição com várias cadeiras e sem tranca na porta. Vários "trabalhadores" podem tentar alterar o texto ao mesmo tempo.
+```java
+  // Ineficiente com String
+  String listaDeCompras = "";
+  listaDeCompras += "Maçã\n";
+  listaDeCompras += "Banana\n";
+  listaDeCompras += "Leite\n";
+  // (Foram criados 4 objetos String na memória para chegar aqui!)
+  
+  // Eficiente com StringBuilder
+  StringBuilder sb = new StringBuilder();
+  sb.append("Maçã\n");
+  sb.append("Banana\n");
+  sb.append("Leite\n");
+  String listaFinal = sb.toString(); // Só cria a String final uma vez!
+```
 
 
 
